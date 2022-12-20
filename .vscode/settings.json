@@ -1,0 +1,13 @@
+{
+  "eslint.enable": true,
+  "eslint.packageManager": "npm",
+  "prettier.enable": true,
+  "prettier.withNodeModules": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+  },
+  "editor.formatOnSave": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "rome.rome"
+  },
+}
