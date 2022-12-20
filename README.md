@@ -20,7 +20,7 @@ MQTT over WebSocket using Node.js
 - [x] Http Server の立ち上げ
 - [x] MQTT Broker の立ち上げ
 - [x] MQTTによる通信の確認(ローカルからmosuquittoでpublish, subscribeできた)
-- [] MQTT over WebSocket の実装（ブラウザからwebsocketでローカルサーバーにアクセスできていない)
+- [-] MQTT over WebSocket の実装（ブラウザからwebsocketでローカルサーバーにアクセスできていない)
 
 ## Image by HiveMQ
 
