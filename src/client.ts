@@ -5,6 +5,7 @@ const Client = {
 	client: connect({
 		host: 'localhost',
 		port: 1883,
+    protocol: 'ws'
 	}),
 
 	host() {
