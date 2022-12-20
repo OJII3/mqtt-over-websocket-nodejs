@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>MQTT</title>
+    <link
+      rel="stylesheet"
+      href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css"
+    />
+    <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+  </head>
+
+  <body>
+    <script>
+      const pubLocal = () => {
+        const client = mqtt.connect("ws://127.0.1.1:3000");
+        const topic = "test/topic";
+        const metric = '{"name": "sensor1", "temp": 10}';
+
+        client.subscribe(topic);
+        client.publish(topic, metric);
+
+        client.on("message", function (topic, message) {
+          // message is Buffer
+          console.log(message.toString());
+        });
+
+        client.end();
+      };
+
+      const pubMosquitto = () => {
+        const client = mqtt.connect("wss://test.mosquitto.org:8081/mqtt");
+        const topic = "floor1/room1";
+        const metric = '{"name": "sensor1", "temp": 10}';
+        console.log("publishing");
+        client.subscribe(topic);
+        client.publish(topic, metric);
+        client.on("message", (topic, message) => {
+          console.log(message.toString());
+        });
+        client.end();
+      };
+    </script>
+    <button onclick="pubMosquitto()">Send to mosquitto test server</button>
+    <button onclick="pubLocal()">Send to local server</button>
+  </body>
+</html>
