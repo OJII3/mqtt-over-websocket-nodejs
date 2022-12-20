@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "mqtt over websocket",
   "scripts": {
-    "start": "ts-node src/broker.ts && ts-node src/server.ts",
+    "start": "ts-node src/test.ts",
     "dev": "ts-node-dev src/test.ts",
     "lint": "rome check .",
     "fix": "rome check . --apply-suggested && rome format . --write"

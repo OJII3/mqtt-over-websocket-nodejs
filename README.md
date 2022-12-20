@@ -13,7 +13,7 @@ MQTT over WebSocket using Node.js
 5. 二つのクライアントが localhost:1883 の MQTT Broker を介して通信する。
 
 これが動くようになれば、ファイアウォールの設定を変えることで、外部からもアクセスできるようになる。
-例えばスマホ。
+例えばスマホ。DrogonでMQTT Brokerを立てるのは難しそう。Httpサーバー部分だけなら余裕だけど、そんなに意味ないかと。
 
 ## Progress
 
@@ -21,12 +21,9 @@ MQTT over WebSocket using Node.js
 - [x] MQTT Broker の立ち上げ
 - [x] MQTT による通信の確認(ローカルから mosuquitto で publish, subscribe できた)
 - [x] MQTT over WebSocket による Mosuquitto Test Server への接続の確認
-- [x] Client その 2 から MQTT over Websocket での通信確認
-- [ ] MQTT over WebSocket の実装（ブラウザから websocket でローカルサーバーにアクセスできていない)
-
-## Image by HiveMQ
-
-![image](https://user-images.githubusercontent.com/84656786/208614097-0e1b088f-75e0-4d59-9140-20a2e27a7e68.png)
+- [x] Client その 2 から MQTT over Websocket での通信の確認
+- [x] ブラウザから mqtt-over-websocket で ローカルの MQTT Broker への接続の確認
+- [ ] localhost 以外からの接続の確認
 
 ## Prerequisites
 
@@ -41,14 +38,40 @@ MQTT over WebSocket using Node.js
 - Mqtt.js: MQTT Client
 - ROME: Linter and Formatter
 
-## Installation
+## 依存パッケージのインストール
 
 ```bash
 npm install
 ```
 
-## Usage
+or
+
+```bash
+npm i
+```
+
+## 使いかた
+
+### 起動
+
+```bash
+npm start
+```
+
+### デバッグ
 
 ```bash
 npm run dev
+```
+
+### コードチェック
+
+```bash
+npm run lint
+```
+
+### フォーマット
+
+```bash
+npm run format
 ```

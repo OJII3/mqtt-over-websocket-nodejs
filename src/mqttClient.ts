@@ -1,11 +1,12 @@
 import { connect } from 'mqtt';
 
-const Client = {
+/** テスト用のMQTTクライアント */
+export const MqttClient = {
 	// MQTTブローカーの設定
 	client: connect({
 		host: 'localhost',
 		port: 1883,
-    protocol: 'ws'
+		protocol: 'ws',
 	}),
 
 	host() {
@@ -24,5 +25,3 @@ const Client = {
 		});
 	},
 };
-
-export default Client;

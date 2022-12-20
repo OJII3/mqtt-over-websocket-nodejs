@@ -4,6 +4,7 @@ import { createServer } from 'http';
 const port = 3000;
 const app = express();
 
+/** HTTPサーバー */
 const HttpServer = {
 	server: createServer(app),
 

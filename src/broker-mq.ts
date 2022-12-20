@@ -1,13 +1,13 @@
 import aedes from 'aedes';
 import { createServer } from 'aedes-server-factory';
 
-/** MQTT BROKER SERVER 1883 */
-const Broker = {
+/** MQTT BROKER SERVER 1884 */
+export const BrokerMQ = {
 	app: new aedes(),
-	port: 1883,
+	port: 1884,
 
 	init() {
-		const server = createServer(this.app, { ws: true });
+		const server = createServer(this.app);
 
 		server.listen(this.port, () => {
 			console.log(`server listening on port ${this.port}`);
@@ -44,5 +44,3 @@ const Broker = {
 		});
 	},
 };
-
-export default Broker;

@@ -1,7 +1,9 @@
-import Client from './client';
+import { MqttClient } from './mqttClient';
 import HttpServer from './httpServer';
-import Broker from './broker';
+import { BrokerWS } from './broker-ws';
+import { BrokerMQ } from './broker-mq';
 
-Broker.init();
-Client.host();
+// BrokerMQ.init();
+BrokerWS.init();
+MqttClient.host();
 HttpServer.init();
