@@ -15,6 +15,9 @@ MQTT over WebSocket using Node.js
 これが動くようになれば、ファイアウォールの設定を変えることで、外部からもアクセスできるようになる。
 例えばスマホ。
 
+![image](https://user-images.githubusercontent.com/84656786/208614097-0e1b088f-75e0-4d59-9140-20a2e27a7e68.png)
+
+
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/en/): v18.12.1
