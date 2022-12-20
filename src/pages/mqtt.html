@@ -13,7 +13,7 @@
   <body>
     <script>
       const pubLocal = () => {
-        const client = mqtt.connect("ws://127.0.1.1:3000");
+        const client = mqtt.connect("ws://172.30.80.27/20:1883");
         const topic = "test/topic";
         const metric = '{"name": "sensor1", "temp": 10}';
 
@@ -41,7 +41,7 @@
         client.end();
       };
     </script>
-    <button onclick="pubMosquitto()">Send to mosquitto test server</button>
-    <button onclick="pubLocal()">Send to local server</button>
+    <button onclick="pubMosquitto()">Mosquitto Test Server</button>
+    <button onclick="pubLocal()">Local Server</button>
   </body>
 </html>
