@@ -7,6 +7,7 @@
     "source.fixAll": true,
   },
   "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[typescript]": {
     "editor.defaultFormatter": "rome.rome"
   },
