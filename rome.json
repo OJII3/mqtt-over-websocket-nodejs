@@ -10,23 +10,39 @@
       "complexity": {
         "recommended": true
       },
-      "correctness" : {
+      "correctness": {
+        "recommended": true
+      },
+      "performance": {
+        "recommended": true
+      },
+      "security": {
+        "recommended": true
+      },
+      "style": {
+        "recommended": true
+      },
+      "suspicious": {
+        "recommended": true
+      },
+      "nursery": {
         "recommended": true
       }
-    },
-    "ignore": ["node_modules"]
+    }
   },
   "formatter": {
     "enabled": true,
     "formatWithErrors": true,
     "indentSize": 2,
-    "lineWidth": 120,
-    "ignore": ["node_modules"]
+    "lineWidth": 120
   },
   "javascript": {
     "formatter": {
       "quoteProperties": "asNeeded",
       "quoteStyle": "single"
     }
+  },
+  "files": {
+    "ignore": ["node_modules"]
   }
 }

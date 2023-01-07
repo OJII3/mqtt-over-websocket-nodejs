@@ -13,57 +13,66 @@
 
   <body>
     <h2>PubしたTopicをSubするテスト</h2>
+
     <div class="row">
       <div class="col">
-
         <h3>Publish</h3>
-        <div style="display: flex; gap: 10px;">
+        <div style="display: flex; gap: 10px">
           <label>domain</label>
           <input type="text" id="domain" value="localhost" />
         </div>
-        <div style="display: flex; gap: 10px;">
+        <div style="display: flex; gap: 10px">
           <label>port</label>
           <input type="text" id="port" value="1883" />
         </div>
-        <div style="display: flex; gap: 10px;">
+        <div style="display: flex; gap: 10px">
           <label>topic</label>
           <input type="text" id="topic" value="test/topic" />
         </div>
-        <div style="display: flex; gap: 10px;">
+        <div style="display: flex; gap: 10px">
           <label>metric</label>
-          <input type="text" id="metric" value='{"name": "sensor1", "temp": 10}' />
+          <input
+            type="text"
+            id="metric"
+            value='{"name": "sensor1", "temp": 10}'
+          />
         </div>
-        <button onclick="pubLocal()">Publish</button>
+        <button onclick="connect()">Connect</button>
+        <button onclick="sub()">Subscribe</button>
+        <button onclick="pub()">Publish</button>
+        <button onclick="end()">End</button>
       </div>
-      <div class="col">
-        
-        <h3>Subscribe</h2>
-          <label>Log</label>
-          <textarea id="log"></textarea>
-        </div>
-        </div>
-        <script>
-          const log = document.querySelector("#log");
-          const domain = document.querySelector("#domain");
-          const port = document.querySelector("#port");
-          const topic = document.querySelector("#topic");
-          const metric = document.querySelector("#metric");
-          const pubLocal = () => {
-            const client = mqtt.connect(`ws://${domain.value}:${port.value}`);
-            client.subscribe(topic.value);
-            client.publish(topic.value, metric.value);
-            
-            client.on("message", function (topic, message) {
-              // message is Buffer
-              console.log(message.toString());
-              log.innerHTML = `${new Date()}: ${message.toString()}\n${
-                log.innerHTML
-              }`;
-            });
-            
-            client.end();
-          };
+    </div>
+    <div class="row">
+      <label>Log</label>
+      <textarea id="log"></textarea>
+    </div>
+    
+    <script src="./index.js">
+      // const log = document.querySelector("#log");
+      // const domain = document.querySelector("#domain");
+      // const port = document.querySelector("#port");
+      // const topic = document.querySelector("#topic");
+      // const metric = document.querySelector("#metric");
+      // let client;
+      // const connect = () => {
+      //   client = mqtt.connect(`ws://${domain.value}:${port.value}`);
+      //   client.on("message", function (topic, message) {
+      //     // message is Buffer
+      //     log.innerHTML = `${new Date()}: ${message.toString()}\n${
+      //       log.innerHTML
+      //     }`;
+      //   });
+      // };
+      // const pub = () => {
+      //   client.publish(topic.value, metric.value);
+      // };
+      // const sub = () => {
+      //   client.subscribe(topic.value);
+      // };
+      // const end = () => {
+      //   client.end();
+      // };
     </script>
   </body>
-  </html>
-  
+</html>

@@ -16,7 +16,7 @@ export const MqttClient = {
 		});
 
 		// subscribe設定
-		var topic_test = 'test/topic';
+		const topic_test = 'test/topic';
 		this.client.subscribe(topic_test);
 
 		// MQTTブローカーからメッセージを受信した際
