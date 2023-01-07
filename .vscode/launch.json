@@ -8,7 +8,7 @@
       "name": "Start Debugging",
       "type": "node-terminal",
       "request": "launch",
-      "command": "npx turbo dev",
+      "command": "npm run dev",
     }
   ]
 }

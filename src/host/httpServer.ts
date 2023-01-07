@@ -16,4 +16,5 @@ const HttpServer = {
 		});
 	},
 };
+
 export default HttpServer;

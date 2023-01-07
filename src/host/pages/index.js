@@ -7,20 +7,20 @@ const metric = document.querySelector('#metric');
 let client;
 
 const connect = () => {
-	client = mqtt.connect(`ws://${domain.value}:${port.value}`);
-	client.on('message', function (topic, message) {
-		// message is Buffer
-		log.innerHTML = `${new Date()}: ${message.toString()}\n${log.innerHTML}`;
-	});
+  client = mqtt.connect(`ws://${domain.value}:${port.value}`);
+  client.on('message', function (topic, message) {
+    // message is Buffer
+    log.innerHTML = `${new Date()}: ${message.toString()}\n${log.innerHTML}`;
+  });
 };
 const pub = () => {
-	client.publish(topic.value, metric.value);
+  client.publish(topic.value, metric.value);
 };
 const sub = () => {
-	client.subscribe(topic.value);
+  client.subscribe(topic.value);
 };
 const end = () => {
-	client.end();
+  client.end();
 };
 
 const connectButton = document.querySelector('#connect').addEventListener('click', connect);
