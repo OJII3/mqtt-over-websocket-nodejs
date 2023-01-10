@@ -1,4 +1,4 @@
-import HttpServer from './host/httpServer';
+import HttpServer from './httpServer';
 import { BrokerWS } from './broker-ws';
 
 BrokerWS.init();
