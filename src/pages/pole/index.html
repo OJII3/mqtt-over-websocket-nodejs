@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>MQTT over WebSocket</title>
+    <link
+      rel="stylesheet"
+      href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://unpkg.com/mqtt@2.15.1/dist/mqtt.min.js"></script>
+  </head>
+
+  <body>
+    <h2>PubしたTopicをSubするテスト</h2>
+
+    <div class="row">
+      <div class="col">
+        <h3>Publish</h3>
+        <div style="display: flex; gap: 10px">
+          <label>domain</label>
+          <input type="text" id="domain" value="localhost" />
+        </div>
+        <div style="display: flex; gap: 10px">
+          <label>port</label>
+          <input type="text" id="port" value="1883" />
+        </div>
+        <div style="display: flex; gap: 10px">
+          <label>topic</label>
+          <input type="text" id="topic" value="test/topic" />
+        </div>
+        <div style="display: flex; gap: 10px">
+          <label>metric</label>
+          <input
+            type="text"
+            id="metric"
+            value='{"name": "sensor1", "temp": 10}'
+          />
+        </div>
+        <button onclick="connect()">Connect</button>
+        <button onclick="sub()">Subscribe</button>
+        <button onclick="pub()">Publish</button>
+        <button onclick="end()">End</button>
+      </div>
+    </div>
+    <div class="row">
+      <label>Log</label>
+      <textarea id="log"></textarea>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
